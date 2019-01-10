@@ -12,6 +12,7 @@ import url from './api/api.js'
 import './assets/css/common/global.css'
 // import './style/theme.less'
 
+
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.prototype.url = url
