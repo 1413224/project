@@ -1,6 +1,7 @@
 <template>
   <div class="header">
-    我是头部
+    <span class="tit">智慧零售</span>
+    
   </div>
 </template>
 
@@ -9,12 +10,18 @@ export default {
   // name: 'HelloWorld',
   data () {
     return {
-
+      
     }
   }
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="less">
+.header{
+	.tit{
+		font-size: 14px;
+		color: #595961;
+		font-weight: bold;
+	}
+}
 </style>

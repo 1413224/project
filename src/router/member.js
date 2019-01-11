@@ -4,7 +4,8 @@ export default [
 		path:'/survey/index',
 		component:resolve => require(['@/pages/survey/index'], resolve),
 		meta:{
-			title:'概况'
+			title:'概况',
+			smatch:''
 		}
 	},
 ]

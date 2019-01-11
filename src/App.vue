@@ -1,13 +1,10 @@
 <template>
   <div id="app">
 		<el-container>
-		  <el-aside width="104px">
-				<menu-slide></menu-slide>
-		  </el-aside>
-
+			<menu-slide></menu-slide>
 		  <el-container>
 		    <el-header>
-					<menu-top></menu-top>
+				<menu-top></menu-top>
 		    </el-header>
 
 		    <el-main>
@@ -39,15 +36,21 @@ export default {
 .el-header, .el-footer {
   background-color: #B3C0D1;
   color: #333;
-  text-align: center;
   line-height: 60px;
 }
-.el-aside{
+/* .el-aside{
 	background-color: #222430;
 	position: fixed;
 	top: 0;
 	left: 0;
 	bottom: 0;
 	color: #878997;
+} */
+.el-container{
+	margin-left: 60px;
+}
+.el-header{
+	background:#fff;
+	box-shadow: 0 2px 20px 0 rgba(15,12,70,.1);
 }
 </style>
