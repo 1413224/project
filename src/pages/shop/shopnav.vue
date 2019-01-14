@@ -1,13 +1,13 @@
 <template>
-  <div>店铺</div>
+  <div>店铺导航页</div>
 </template>
 
 <script>
 export default {
-  name: 'shop',
+  name: 'shopnav',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+     
     }
   },
   created(){
@@ -16,7 +16,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 
 </style>
