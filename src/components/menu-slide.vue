@@ -47,7 +47,7 @@ export default {
           text:'概况',
           src:'/survey',
           smatch:'survey',
-          type:'el-icon-edit',
+          type:'iconfont icon-frown',
           child:[
             {
               title:'会员',
@@ -64,7 +64,7 @@ export default {
           text:'店铺',
           src:'/shop',
           smatch:'shop',
-          type:'el-icon-goods',
+          type:'iconfont icon-info-circle',
           child:[
             {
               title:'个性装修',
@@ -114,15 +114,12 @@ export default {
   		this.isActive = null
   	},
     goPages(item,e){
-      // console.log(e.currentTarget)
       this.kind = e.currentTarget.querySelector('i').className
       this.$router.push({
         path:item.src
       })
-      // console.log(this.$route)
     },
     goChildPage(item){
-      console.log(item)
       this.$router.push({
         path:item.src
       })

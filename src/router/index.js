@@ -72,11 +72,11 @@ const router = new Router({
       }
     }*/
   ]
-  /*.concat(
+  .concat(
   	User,
-  	Member,
-    Shop
-  )*/
+  	/*Member,
+    Shop*/
+  )
 })
 
  export default router
