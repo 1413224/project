@@ -6,10 +6,13 @@
         <el-header>
         <menu-top></menu-top>
         </el-header>
-    
-        <el-main>
+        <!-- <menu-top></menu-top> -->
+        <!-- <el-main>
               <router-view/>
-        </el-main>
+        </el-main> -->
+        <div class="main">
+          <router-view/>
+        </div>
     
         <!-- <el-footer>Footer</el-footer> -->
       </el-container>
@@ -38,30 +41,50 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 .el-header, .el-footer {
   background-color: #B3C0D1;
   color: #333;
   line-height: 60px;
 }
-/* .el-aside{
-  background-color: #222430;
+.el-header{
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  color: #878997;
-} */
+  z-index: 9999;
+  width: calc(100% - 120px);
+}
 .el-container{
   margin-left: 60px;
 }
 .el-main{
   padding-left: 160px;
+  /* position: fixed;
+  top: 0;
+  bottom:0;
+  right: 0;
+  background: #fff;
+  overflow: auto; */
 }
 .el-header{
   background:#fff;
   box-shadow: 0 2px 20px 0 rgba(15,12,70,.1);
 }
 
+
+.main{
+  /*width: 100%;*/
+  /*position: relative;
+  width: calc(100% - 290px);
+  top: 70px;
+  bottom: 0;
+  right: 0;*/
+  /*background: #fff; */
+  /* position: absolute;
+  width: calc(100% - 290px);
+  top: 70px;
+  bottom: 10px;
+  right: 10px;
+  background: #fff; 
+  box-shadow: 0 0 4px 0 rgba(200,200,200,.5);
+  min-height: 90%; */
+}
 </style>

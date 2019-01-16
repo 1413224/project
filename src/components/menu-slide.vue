@@ -11,7 +11,7 @@
     		@mouseover="addActive(index)" 
     		@mouseout="removeActive(index)"
         @click.stop="goPages(item,$event)">
-    		<span><i :class="item.type"></i>{{item.text}}</span>
+    		<span><i class="iconfont" :class="item.type"></i>{{item.text}}</span>
     	</li>
     </ul>
     <ul class="child-nav">
@@ -24,6 +24,9 @@
               :class="{active:$route.meta.childSmatch==itm.childSmatch}"
               @click="goChildPage(itm)">
               {{itm.text}}
+              <i 
+                class="iconfont icon-caret-right"
+                v-show="$route.meta.childSmatch==itm.childSmatch"></i>
             </dd>
           </template>
         </dl>
@@ -47,7 +50,7 @@ export default {
           text:'概况',
           src:'/survey',
           smatch:'survey',
-          type:'iconfont icon-frown',
+          type:'icon-frown',
           child:[
             {
               title:'会员',
@@ -64,7 +67,7 @@ export default {
           text:'店铺',
           src:'/shop',
           smatch:'shop',
-          type:'iconfont icon-info-circle',
+          type:'icon-info-circle',
           child:[
             {
               title:'个性装修',
@@ -93,8 +96,9 @@ export default {
     this.arr = this.items.filter((item)=>{
       return item.smatch == this.smatch
     })
-    this.kind = this.arr[0].type
-    // console.log(this.$route.meta.childSmatch)
+    //获取侧边栏iconType
+    this.getIconItemType(this.arr[0].type)
+
   },
   mounted(){
     // console.log(this.curdetail)
@@ -114,7 +118,8 @@ export default {
   		this.isActive = null
   	},
     goPages(item,e){
-      this.kind = e.currentTarget.querySelector('i').className
+      //获取侧边栏iconType
+      this.getIconItemType(e.currentTarget.querySelector('i').className)
       this.$router.push({
         path:item.src
       })
@@ -123,6 +128,18 @@ export default {
       this.$router.push({
         path:item.src
       })
+    },
+    //获取侧边栏iconType
+    getIconItemType(itemType){
+      let num = itemType.indexOf('icon-')  
+      let cname = itemType.substr(num)  //icon-info-ff  
+      let knum = cname.indexOf(' ')
+
+      if(knum == -1){
+        this.kind = cname
+      }else{
+        this.kind = cname.substr(0,knum-1)
+      }
     }
   }
 }
@@ -224,6 +241,11 @@ export default {
         &:hover{
           background: #E9EAF0;
           border-radius: 6px;
+        }
+        i{
+          font-size: 12px;
+          float: right;
+          margin-top: 4px;
         }
       }
       dd.active{
