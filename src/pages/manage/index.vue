@@ -1,22 +1,10 @@
 <template>
-  <div class="">
-    <el-container>
-      <menu-slide></menu-slide>
-      <el-container>
-        <el-header>
-        <menu-top></menu-top>
-        </el-header>
-        <!-- <menu-top></menu-top> -->
-        <!-- <el-main>
-              <router-view/>
-        </el-main> -->
-        <div class="main">
-          <router-view/>
-        </div>
-    
-        <!-- <el-footer>Footer</el-footer> -->
-      </el-container>
-    </el-container>
+  <div class="appwrap">
+    <el-header>
+      <menu-top></menu-top>
+    </el-header>
+    <menu-slide></menu-slide>
+    <router-view/>
   </div>
   
 </template>
@@ -49,7 +37,9 @@ export default {
 }
 .el-header{
   position: fixed;
-  z-index: 9999;
+  left: 120px;
+  z-index: 1000;
+  /*饿了么UI 提示框2000*/
   width: calc(100% - 120px);
 }
 .el-container{
@@ -86,5 +76,8 @@ export default {
   background: #fff; 
   box-shadow: 0 0 4px 0 rgba(200,200,200,.5);
   min-height: 90%; */
+}
+.appwrap{
+  height: 100%;
 }
 </style>
